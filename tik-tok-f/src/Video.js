@@ -1,6 +1,7 @@
 import React ,{useRef,useState} from "react";
 import "./Video.css";
 import VideoFooter from "./VideoFooter";
+import VideoSidebar from "./VideoSidebar";
 
 const Video = () => {
     const videoref = useRef(null);
@@ -27,6 +28,7 @@ const Video = () => {
                ref={videoref}
                src="https://statusvideoload.com/wp-content/uploads/2021/06/Army-attitude-shayari-status-Foji-shayari-status-Full-screen-short-Nksingh01.mp4 "></video>
               <VideoFooter/>
+              <VideoSidebar/>
            </div>
 
              

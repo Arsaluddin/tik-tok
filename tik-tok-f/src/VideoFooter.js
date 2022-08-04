@@ -8,10 +8,11 @@ const VideoFooter = () => {
         <>
             <div className="videofooter">
                 <div className="videofooter_text">
-                       <h3>@arsal</h3>
+                       <h2>@arsal</h2>
                        <p>some discription</p>
                        <div className="videofooter_ticker">
                          <MusicNoteIcon className="videofooter_icon"/>
+                          <h5>Song name</h5> 
                        </div>
                 </div>
 
