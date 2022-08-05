@@ -28,7 +28,7 @@ const Video = () => {
                ref={videoref}
                src="https://statusvideoload.com/wp-content/uploads/2021/06/Army-attitude-shayari-status-Foji-shayari-status-Full-screen-short-Nksingh01.mp4 "></video>
               <VideoFooter/>
-              <VideoSidebar/>
+              <VideoSidebar likes={23} shares={34} messages={78}/>
            </div>
 
              
