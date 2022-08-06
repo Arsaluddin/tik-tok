@@ -3,7 +3,7 @@ import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 
-const Video = () => {
+const Video = ({url}) => {
     const videoref = useRef(null);
     const [playing,setPlaying] = useState(false);
 
@@ -26,7 +26,7 @@ const Video = () => {
                className="video_player"
                loop
                ref={videoref}
-               src="https://statusvideoload.com/wp-content/uploads/2021/06/Army-attitude-shayari-status-Foji-shayari-status-Full-screen-short-Nksingh01.mp4 "></video>
+               src={url}></video>
               <VideoFooter/>
               <VideoSidebar likes={23} shares={34} messages={78}/>
            </div>

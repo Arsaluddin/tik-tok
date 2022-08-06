@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       
       <div className="app_videos">
-        <Video/>
+        <Video url="https://statusvideoload.com/wp-content/uploads/2021/06/Army-attitude-shayari-status-Foji-shayari-status-Full-screen-short-Nksingh01.mp4"/>
         
         <Video/>
       </div>
