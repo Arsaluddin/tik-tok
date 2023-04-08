@@ -5,12 +5,20 @@ html {
   scroll-snap-type: y mandatory;
 }
 .App {
+  display: flex;
+  flex-direction: row;
   height: 100vh;
-  background-color: black;
-  display: grid;
   place-items: center;
+  justify-content: space-around;
+  
 }
-
+.App form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border: 2px solid ;
+  border-radius: 10px;
+}
 .app_videos{
     position: relative;
     height: 600px;
