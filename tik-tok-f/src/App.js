@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 
 function App() {
 
-  const [array,setArray] = useState([{}]);
+  const [array,setArray] = useState([]);
 
   const tiktok = () => {
     
     fetch('http://localhost:9000/')
     .then((res) => res.json())
     .then((data) => {
-      setArray(data);
+      var list = [...array,data]
+      
+      setArray(list);
       console.log(data)
     })
 
@@ -28,7 +30,7 @@ function App() {
     <div className="App">  
 
       <div className="form">
-
+        <h2>Please Add your video </h2>
         <form>
           <label>Url</label>
           <input></input>
@@ -49,13 +51,14 @@ function App() {
       </div> 
       
       <div className="app_videos">
-        {/* <Video url="https://statusvideoload.com/wp-content/uploads/2021/06/Army-attitude-shayari-status-Foji-shayari-status-Full-screen-short-Nksingh01.mp4" likes={12} shares={23} message={34} channel={"@arsal"} song={"Indian army life"} description={"the real Sigma Army💪"}/>
         
-        <Video url="http://status-video.com/my_content/uploads/2021/07/Romantic-Tere-Sang-Ishq-Tarin-Hai-Sunset-15-Sec-Status-_-Instagram-Reel-Type-Video.mp4" likes={45} shares={89} message={78} channel={"@umbreen"} song={"tere sang ishq tali h"} description={"best shot on beach side💌"}/> */}
-
-        {array && array.map((i) => {
+       { array && array.map((i,index) => {
             
-           <Video key={i.id} url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
+          return (
+            
+            <Video key={index} url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
+            
+          )
            
         })}
 

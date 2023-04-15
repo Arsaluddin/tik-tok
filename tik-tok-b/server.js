@@ -29,6 +29,7 @@ mongoose.connect(connection_url,{
 
 // api endpoint
 
+
 app.get("/",(req,res)=>{
     // res.status(200).send(data);
     data.find((err,data) => {
@@ -39,6 +40,11 @@ app.get("/",(req,res)=>{
         }
     })
 })
+
+
+
+
+
 
 app.get('/v1/posts',(req,res) => {
     res.status(200).send(data);
