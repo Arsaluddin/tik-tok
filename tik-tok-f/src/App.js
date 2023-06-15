@@ -31,21 +31,21 @@ function App() {
 
       <div className="form">
         <h2>Please Add your video </h2>
-        <form>
+        <form >
           <label>Url</label>
-          <input></input>
+          <input name="Url"></input>
           <label>likes</label>
-          <input></input>
+          <input name="likes"></input>
           <label>shares</label>
-          <input></input>
+          <input name="shares"></input>
           <label>channel</label>
-          <input></input>
+          <input name="channel"></input>
           <label>song</label>
-          <input></input>
+          <input name="song"></input>
           <label>description</label>
-          <input></input>
+          <input name="description"></input>
           <br></br>
-          <button>Submit</button>
+          <button type="submit">Submit</button>
         </form>
         
       </div> 
