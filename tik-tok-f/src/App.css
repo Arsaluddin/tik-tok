@@ -6,7 +6,7 @@ html {
 }
 .App {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
   place-items: center;
   justify-content: space-around;
