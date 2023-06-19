@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "start": "node server.js"
+    "start": "node server.js"
   },
   "author": "arsal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.18.1",
     "mongoose": "^6.5.1"
   }

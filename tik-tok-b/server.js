@@ -2,6 +2,7 @@ import  express  from "express";
 import mongoose from "mongoose";
 import  data from './data.js'; 
 import Videos from './dbModel.js';
+import bodyParser from 'body-parser';
 
 
 //app config
@@ -10,6 +11,7 @@ const port = 9000;
 
 // middlewares
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin","*"),
     res.setHeader("Access-Control-Allow-Headers","*"),
@@ -46,19 +48,22 @@ app.get("/",(req,res)=>{
 
 
 
-app.get('/v1/posts',(req,res) => {
-    res.status(200).send(data);
-})
+// app.get('/posts',(req,res) => {
+//     res.status(200).send(data);
+// })
 
-app.get('/v2/posts',(req,res) => {
+app.post('/posts',(req,res) => {
 
-    Videos.find((err,data) => {
-        if(err){
-            res.send(err);
-        }else{
-            res.send(data);
-        }
-    })
+    const url = req.body.Url;
+    const likes = req.body.likes;
+    const share = req.body.shares;
+    const channel = req.body.channel;
+    const song = req.body.song;
+    const description = req.body.description;
+    console.log(url)
+   
+
+    res.redirect('/');
 });
 
 app.post('/v2/posts',(req,res) => {
