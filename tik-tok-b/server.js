@@ -12,6 +12,7 @@ const port = 9000;
 // middlewares
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin","*"),
     res.setHeader("Access-Control-Allow-Headers","*"),
@@ -52,7 +53,7 @@ app.get("/",(req,res)=>{
 //     res.status(200).send(data);
 // })
 
-app.post('/posts',(req,res) => {
+app.post("/posts",(req,res) => {
 
     const url = req.body.Url;
     const likes = req.body.likes;
@@ -60,10 +61,11 @@ app.post('/posts',(req,res) => {
     const channel = req.body.channel;
     const song = req.body.song;
     const description = req.body.description;
-    console.log(url)
-   
 
-    res.redirect('/');
+   
+   res.send("submitted");
+
+    // res.redirect('/');
 });
 
 app.post('/v2/posts',(req,res) => {
