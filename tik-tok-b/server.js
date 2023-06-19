@@ -46,11 +46,8 @@ app.get("/",(req,res)=>{
 
 
 
-
-
-
 // app.get('/posts',(req,res) => {
-//     res.status(200).send(data);
+//     res.send("hello");
 // })
 
 app.post("/posts",(req,res) => {
@@ -61,24 +58,13 @@ app.post("/posts",(req,res) => {
     const channel = req.body.channel;
     const song = req.body.song;
     const description = req.body.description;
+  
 
-   
-   res.send("submitted");
-
-    // res.redirect('/');
+    res.redirect('http://localhost:3000');
+    
 });
 
-app.post('/v2/posts',(req,res) => {
-    const dbVideos = req.body;
 
-    Videos.create(dbVideos,(err,data) => {
-        if(err){
-            res.send(err);
-        }else{
-            res.send(data);
-        }
-    })
-})
 
 // listen 
 app.listen(port,()=>console.log(`listening on localhost:${port}`));

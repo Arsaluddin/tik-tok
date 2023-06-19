@@ -7,7 +7,7 @@ const Post = () => {
     <>
       <div className="form">
         <h2>Please Add your video </h2>
-        <form typeof="submit" action="/posts" method="post">
+        <form typeof="submit" action="http://localhost:9000/posts" method="post">
           <label>Url</label>
           <input type="text" name="Url"></input>
           <label>likes</label>
@@ -21,7 +21,9 @@ const Post = () => {
           <label>description</label>
           <input type="text" name="description"></input>
           <br></br>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={()=> {
+            alert('Data submitted successfully!');
+          }}>Submit</button>
         </form>
         
       </div> 
