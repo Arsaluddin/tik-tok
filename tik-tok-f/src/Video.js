@@ -6,6 +6,7 @@ import VideoSidebar from "./VideoSidebar";
 const Video = ({url,likes,shares,message,song,channel,description}) => {
     const videoref = useRef(null);
     const [playing,setPlaying] = useState(false);
+    
 
     const handleVideoPress = () => {
         if(playing){
@@ -22,6 +23,7 @@ const Video = ({url,likes,shares,message,song,channel,description}) => {
         <>
            <div className="video">
                <video 
+               
                onClick={handleVideoPress}
                className="video_player"
                loop
@@ -29,6 +31,7 @@ const Video = ({url,likes,shares,message,song,channel,description}) => {
                src={url}></video>
               <VideoFooter song={song} channel={channel} description={description}/>
               <VideoSidebar likes={likes} shares={shares} messages={message}/>
+              <h1>arsal</h1>
            </div>
 
              

@@ -34,14 +34,15 @@ mongoose.connect(connection_url,{
 
 
 app.get("/",(req,res)=>{
-    // res.status(200).send(data);
-    data.find((err,data) => {
-        if(err){
-            res.send(err);
-        }else{
-            res.send(data);
-        }
-    })
+    res.status(200).send(data);
+    
+    // data.find((err,data) => {
+    //     if(err){
+    //         res.send(err);
+    //     }else{
+    //         res.send(data);
+    //     }
+    // })
 })
 
 

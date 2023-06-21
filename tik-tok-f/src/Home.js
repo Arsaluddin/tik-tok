@@ -5,19 +5,27 @@ import Video from './Video';
 const Home = () => {
 
     const [array,setArray] = useState([]);
+    // const array = [];
 
     const tiktok = () => {
       
       fetch('http://localhost:9000/')
       .then((res) => res.json())
       .then((data) => {
-        var list = [...array,data]
+
         
-        setArray(list);
-        console.log(data)
+        var list = [];
+        for(var i=0;i<data.length;i++){
+            list.push(data[i]);
+        }
+        setArray(list)
+        console.log(list)
+      
       })
-  
+      
     }
+
+    
   
     useEffect(() => {
       tiktok();
@@ -27,11 +35,11 @@ const Home = () => {
      <>
         <div className="app_videos">
         
-        { array && array.map((i,index) => {
-             
+        { array && array.map((i) => {
+               
            return (
              
-             <Video key={index} url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
+            <Video key={i.id} url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
              
            )
             
