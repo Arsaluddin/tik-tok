@@ -19,7 +19,7 @@ const Home = () => {
             list.push(data[i]);
         }
         setArray(list)
-        console.log(list)
+        
       
       })
       

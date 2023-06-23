@@ -33,23 +33,22 @@ mongoose.connect(connection_url,{
 // api endpoint
 
 
-app.get("/",(req,res)=>{
-    res.status(200).send(data);
+app.get("/",async(req,res)=>{
+    // res.status(200).send(data);
     
-    // data.find((err,data) => {
-    //     if(err){
-    //         res.send(err);
-    //     }else{
-    //         res.send(data);
-    //     }
-    // })
+    try{
+        
+    }
+    catch{
+        console.log("error")
+    }
+    
+   
 })
 
 
 
-// app.get('/posts',(req,res) => {
-//     res.send("hello");
-// })
+
 
 app.post("/posts",(req,res) => {
 
@@ -59,6 +58,8 @@ app.post("/posts",(req,res) => {
     const channel = req.body.channel;
     const song = req.body.song;
     const description = req.body.description;
+
+    
   
 
     res.redirect('http://localhost:3000');
