@@ -18,6 +18,7 @@ const Home = () => {
         for(var i=0;i<data.length;i++){
             list.push(data[i]);
         }
+        console.log(list)
         setArray(list)
         
       
@@ -39,7 +40,7 @@ const Home = () => {
                
            return (
              
-            <Video key={i.id} url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
+            <Video url={i.url} likes={i.likes} shares={i.shares} message={i.message} channel={i.channel} song={i.song} description={i.description}/>
              
            )
             

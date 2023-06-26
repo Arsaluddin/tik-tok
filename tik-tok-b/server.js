@@ -1,8 +1,10 @@
 import  express  from "express";
 import mongoose from "mongoose";
-import  data from './data.js'; 
+// import  data from './data.js'; 
 import Videos from './dbModel.js';
 import bodyParser from 'body-parser';
+import {MongoClient} from 'mongodb';
+
 
 
 //app config
@@ -30,27 +32,45 @@ mongoose.connect(connection_url,{
     useUnifiedTopology: true,
 });
 
+const client = new MongoClient(connection_url);
+
+let db, collection;
+
+async function connectToDatabase() {
+  try {
+    await client.connect();
+    db = client.db('test');
+    collection = db.collection('tiktokvideos');
+    console.log('Connected to MongoDB Atlas');
+  } catch (error) {
+    console.error('Failed to connect to MongoDB Atlas', error);
+  }
+}
+
+connectToDatabase();
+
 // api endpoint
 
 
 app.get("/",async(req,res)=>{
-    // res.status(200).send(data);
     
-    try{
+    try {
+        const data = await collection.find().toArray();
         
-    }
-    catch{
-        console.log("error")
-    }
+        res.json(data);
+        
+      } catch (error) {
+        console.error('Failed to retrieve data from MongoDB', error);
+        res.status(500).json({ error: 'Failed to retrieve data' });
+      }
     
-   
 })
 
 
 
 
 
-app.post("/posts",(req,res) => {
+app.post("/posts",async(req,res) => {
 
     const url = req.body.Url;
     const likes = req.body.likes;
@@ -59,7 +79,18 @@ app.post("/posts",(req,res) => {
     const song = req.body.song;
     const description = req.body.description;
 
-    
+    const data = {url,likes,share,channel,song,description};
+
+    try{
+      
+      const result = await collection.insertOne(data);
+      console.log(result);
+      res.send(result)
+      res.redirect('http://localhost:3000');
+    }
+    catch{
+       console.log("error");
+    }
   
 
     res.redirect('http://localhost:3000');
