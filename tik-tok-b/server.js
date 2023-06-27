@@ -85,15 +85,17 @@ app.post("/posts",async(req,res) => {
       
       const result = await collection.insertOne(data);
       console.log(result);
-      res.send(result)
       res.redirect('http://localhost:3000');
+      res.send(result)
+      
     }
     catch{
        console.log("error");
     }
   
-
-    res.redirect('http://localhost:3000');
+    app.delete("/", () => {
+        
+    })
     
 });
 

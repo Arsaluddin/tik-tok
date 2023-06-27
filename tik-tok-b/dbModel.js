@@ -1,10 +1,11 @@
+import { Double } from "mongodb";
 import mongoose from  "mongoose";
 
 const tiktokSchema = mongoose.Schema({
     url: String,
     channel: String,
     song: String,
-    likes: String,
+    likes: Number,
     messages: String,
     description: String,
     shares: String,
