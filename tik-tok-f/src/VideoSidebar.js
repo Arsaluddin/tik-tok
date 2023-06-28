@@ -10,11 +10,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const VideoSidebar = ({likes,shares,messages}) => {
   const [liked,setLiked] =useState(false);
 
+   const handleDelete = () => {
+    console.log("deleted")
+   }
+
     return (
         <>
           <div className="videosidebar">
             <div className="videosidebar_button">
-               <DeleteIcon fontSize="large"/>
+               <DeleteIcon onClick={() =>{handleDelete()}} fontSize="large"/>
             </div>
             <div className="videosidebar_button">
               {liked ? (
