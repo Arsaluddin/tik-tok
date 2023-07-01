@@ -18,7 +18,7 @@ const VideoSidebar = ({likes,shares,messages}) => {
         <>
           <div className="videosidebar">
             <div className="videosidebar_button">
-               <DeleteIcon onClick={() =>{handleDelete()}} fontSize="large"/>
+               {/* <DeleteIcon onClick={() =>{handleDelete()}} fontSize="large"/> */}
             </div>
             <div className="videosidebar_button">
               {liked ? (

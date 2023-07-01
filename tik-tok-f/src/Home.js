@@ -1,6 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import Video from './Video';
+import './Home.css'
 
 const Home = () => {
 
@@ -34,6 +35,7 @@ const Home = () => {
 
     return (
      <>
+        <h1> Add your Favourite Shorts❤</h1>
         <div className="app_videos">
         
         { array && array.map((i) => {
