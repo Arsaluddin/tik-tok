@@ -1,4 +1,5 @@
 import React from "react";
+import './Post.css'
 
 const Post = () => {
 
@@ -32,3 +33,4 @@ const Post = () => {
 }
 
 export default Post;
+ 

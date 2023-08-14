@@ -1,5 +1,6 @@
 *{
   margin: 0px;
+  /* background-color: rgba(128, 128, 128, 0.301); */
 }
 html {
   scroll-snap-type: y mandatory;

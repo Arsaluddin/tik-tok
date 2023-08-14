@@ -6,9 +6,9 @@ const tiktokSchema = mongoose.Schema({
     channel: String,
     song: String,
     likes: Number,
-    messages: String,
+    messages: Number,
     description: String,
-    shares: String,
+    shares: Number,
 });
 
 export default mongoose.model('tiktokVideos',tiktokSchema);
