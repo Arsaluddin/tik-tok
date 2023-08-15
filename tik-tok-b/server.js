@@ -4,6 +4,9 @@ import mongoose from "mongoose";
 import Videos from './dbModel.js';
 import bodyParser from 'body-parser';
 import {MongoClient} from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 
 
@@ -24,15 +27,15 @@ app.use((req,res,next) => {
 // db config
 //eA5NxCt1110R1AB0
 //eA5NxCt1110R1AB0
-const connection_url = 'mongodb+srv://admin:eA5NxCt1110R1AB0@cluster0.kztc4fu.mongodb.net/?retryWrites=true&w=majority';
+// const connection_url = 'mongodb+srv://admin:eA5NxCt1110R1AB0@cluster0.kztc4fu.mongodb.net/?retryWrites=true&w=majority';
 
-mongoose.connect(connection_url,{
+mongoose.connect(process.env.connection_url,{
     useNewUrlParser: true,
     // useCreateIndex: true,
     useUnifiedTopology: true,
 });
 
-const client = new MongoClient(connection_url);
+const client = new MongoClient(process.env.connection_url);
 
 let db, collection;
 

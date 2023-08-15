@@ -66,7 +66,7 @@ const Video = ({url,likes,shares,message,song,channel,description}) => {
                src={url}></video>
               <VideoFooter song={song} channel={channel} description={description}/>
               <VideoSidebar likes={likes} shares={shares} messages={message}/>
-              <h1>arsal</h1>
+              
            </div>
 
              
@@ -74,6 +74,7 @@ const Video = ({url,likes,shares,message,song,channel,description}) => {
         </>
     );
 }
+
 
 export default Video;
  
