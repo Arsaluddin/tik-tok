@@ -10,7 +10,7 @@ const Home = () => {
 
     const tiktok = () => {
       
-      fetch('http://localhost:9000/')
+      fetch('https://tik-tok-b.onrender.com')
       .then((res) => res.json())
       .then((data) => {
 

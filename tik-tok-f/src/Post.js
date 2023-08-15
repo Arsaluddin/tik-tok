@@ -8,7 +8,7 @@ const Post = () => {
     <>
       <div className="form">
         <h2>Please Add your video </h2>
-        <form typeof="submit" action="http://localhost:9000/posts" method="post">
+        <form typeof="submit" action="https://tik-tok-b.onrender.com/posts" method="post">
           <label>Url</label>
           <input type="text" name="Url"></input>
           <label>likes</label>
