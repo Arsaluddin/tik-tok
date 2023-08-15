@@ -24,10 +24,7 @@ app.use((req,res,next) => {
     next();
 });
 
-// db config
-//eA5NxCt1110R1AB0
-//eA5NxCt1110R1AB0
-// const connection_url = 'mongodb+srv://admin:eA5NxCt1110R1AB0@cluster0.kztc4fu.mongodb.net/?retryWrites=true&w=majority';
+
 
 mongoose.connect(process.env.connection_url,{
     useNewUrlParser: true,
