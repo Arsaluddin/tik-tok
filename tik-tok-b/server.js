@@ -85,7 +85,7 @@ app.post("/posts",async(req,res) => {
       
       const result = await collection.insertOne(data);
       console.log(result);
-      res.redirect('http://localhost:3000');
+      res.redirect('/');
       res.send(result)
       
     }
